@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Day1
 {
+    /// <summary>
+    /// Models an elf
+    /// </summary>
     internal class Elf
     {
         readonly int[] _foodItems;
@@ -18,6 +21,10 @@ namespace Day1
             }
         }
 
+        /// <summary>
+        /// Creates a new <c>Elf</c>
+        /// </summary>
+        /// <param name="FoodItems">List of calorie values for all food items the elf is holding</param>
         internal Elf(int[] FoodItems)
         {
             _foodItems= FoodItems;

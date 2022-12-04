@@ -9,9 +9,9 @@ namespace Day1
 {
     internal static class ImportData
     {
-        internal static List<int[]> GetData(string FileName)
+        internal static List<Elf> GetData(string FileName)
         {
-            List<int[]> output = new List<int[]>();
+            List<int[]> ElfCalorieData = new List<int[]>();
 
             string rawData = File.ReadAllText(FileName);
 
@@ -25,8 +25,15 @@ namespace Day1
                         .Where(x=> !string.IsNullOrEmpty(x))
                         .Select(x => int.Parse(x)).ToArray();
 
-                    output.Add(sectionData);
+                    ElfCalorieData.Add(sectionData);
                 }
+            }
+
+            List<Elf> output = new List<Elf>();
+
+            foreach (int[] elfData in ElfCalorieData)
+            {
+                output.Add(new Elf(elfData));
             }
 
             return output;
