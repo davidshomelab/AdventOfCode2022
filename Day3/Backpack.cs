@@ -22,7 +22,6 @@ namespace Day3
 
         internal Item[] StringToPriorities(char[] data)
         {
-            byte[] rawBytes = Encoding.ASCII.GetBytes(data);
             Item[] output = data.Select(x => new Item(x)).ToArray();
 
             return output;
