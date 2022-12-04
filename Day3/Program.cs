@@ -4,14 +4,7 @@
     {
         static void Main(string[] args)
         {
-            string[] data = ImportData.GetData("input.txt");
-
-            List<Backpack> backpacks = new List<Backpack>();
-
-            foreach (string line in data)
-            {
-                backpacks.Add(new Backpack(line));
-            }
+            List<Backpack> backpacks = ImportData.GetData("input.txt");
 
             List<int> outputs = new List<int>();
 
