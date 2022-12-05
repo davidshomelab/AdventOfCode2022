@@ -10,7 +10,7 @@
 
             foreach (Team team in teams)
             {
-                if (team.ElvesOverlap())
+                if (team.ElvesFullyOverlap())
                 {
                     overlappingTeams++;
                 }
