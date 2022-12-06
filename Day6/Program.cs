@@ -12,7 +12,7 @@
 
                 char[] distinctValues = sectionToCheck.Distinct().ToArray();
 
-                if (distinctValues.Count() == markerLength)
+                if (distinctValues.Length == markerLength)
                 {
                     return i;
                 }
