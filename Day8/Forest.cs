@@ -70,11 +70,12 @@ namespace Day8
         {
             int TreeHeight = GetTreeHeight(x, y);
 
-            if (GetLeft(x, y).DefaultIfEmpty(-1).Max() < TreeHeight) return true;
-            if (GetRight(x, y).DefaultIfEmpty(-1).Max() < TreeHeight) return true;
-            if (GetAbove(x, y).DefaultIfEmpty(-1).Max() < TreeHeight) return true;
-            if (GetBelow(x, y).DefaultIfEmpty(-1).Max() < TreeHeight) return true;
-            return false;
+            // if there are no adjacent trees we set a single value of -1
+            // to ensure that a tree of height 0 at the edge is still counted
+            return GetLeft(x, y).DefaultIfEmpty(-1).Max() < TreeHeight
+            || GetRight(x, y).DefaultIfEmpty(-1).Max() < TreeHeight
+            || GetAbove(x, y).DefaultIfEmpty(-1).Max() < TreeHeight
+            || GetBelow(x, y).DefaultIfEmpty(-1).Max() < TreeHeight;
         }
 
         internal int ScenicScore(int x, int y)

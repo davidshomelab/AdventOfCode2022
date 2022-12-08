@@ -10,15 +10,13 @@ namespace Day8
     {
         internal static Forest GetData(string filename)
         {
-            var outputList = new List<int[]>();
-            var rawData = System.IO.File.ReadAllLines(filename);
-            foreach (var line in rawData)
-            {
-                var chars = line.ToCharArray().Select(x => int.Parse(x.ToString())).ToArray();
-                outputList.Add(chars);
-            }
+            var rawData = File.ReadAllLines(filename)
+                .Select(line => line.ToCharArray()
+                .Select(item => int.Parse(item.ToString()))
+                .ToArray());
+                
 
-            return new Forest(outputList);
+            return new Forest(rawData);
         }
     }
 }
